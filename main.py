@@ -19,7 +19,7 @@ def ans_query():
     question = data.get("message", "")        
 
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-20b",
         messages=[
             {"role": "system", "content": "Act like a helpful personal assistant"},
             {"role": "user", "content": question}
@@ -38,7 +38,7 @@ def summarize_email():
     prompt = f"Summarize the following email in 2-3 sentences: {email_text}"
 
     response = client.chat.completions.create( 
-        model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-20b",
         messages=[
             {"role": "system", "content": "Act like an expert email assistant"},
             {"role": "user", "content": prompt}
